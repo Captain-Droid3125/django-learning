@@ -16,8 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from mylearning.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('explorer.urls')),  # Connect the explorer app
+    path('', index, name='home'),  # Connect the index view from mylearning app
+    path('explorer/', include('explorer.urls')),  # Connect the explorer app
+    path('blog/', include('blog.urls')),  # Connect the blog app
 ]
