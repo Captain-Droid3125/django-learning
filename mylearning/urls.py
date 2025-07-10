@@ -20,7 +20,7 @@ from mylearning.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/' ,name='index'),  # Connect the index view
+    path('index/' , index, name='index'),  # Connect the index view
     path('explorer/', include('explorer.urls')),  # Connect the explorer app
     path('', include('blog.urls')),  # Connect the blog app
 ]
